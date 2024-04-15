@@ -142,6 +142,9 @@ You can add a crontab @reboot to be executed at reboot.
 ```bash
 @reboot sleep 60 && /path/to/folder/rak2013/activate_lte 2>/dev/null &
 ```
+
+Reboot the Rpi, and it should automatically turn on the LTE hat, (Blue Light) and Connect (red light) to the LTE network
+
 Done!
 
 
