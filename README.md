@@ -102,8 +102,10 @@ With this information, now we can handle the GPIOs from BASH, adding the number 
 
 For the Rak2013 we need to handle GPIOs 5,6,13,19,21 and 26 in order to Power on the hat.
 
-#Controller is gpio512
-#inputs must be 512 + pin number
+Controller is gpio512
+
+inputs must be 512 + pin number
+
 GPIO PIN->   ChipPIN
 # 5     ->   517
 # 6     ->   518
