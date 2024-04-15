@@ -1,0 +1,81 @@
+#!/bin/sh
+
+#Controller is gpio512
+#inputs must be 512 + pin number
+# 5     -> 517
+# 6     -> 518
+# 13    -> 525
+# 19    -> 531
+# 21    -> 533
+# 26    -> 538
+
+# 18 (PWR)-> 530
+
+cleanup_gpio()
+{
+    if [ -d /sys/class/gpio/gpio$1 ]
+    then
+        echo "$1" > /sys/class/gpio/unexport; sleep 0.2
+    fi
+}
+
+cd /sys/class/gpio/
+if [ ! -d /sys/class/gpio/gpio517 ]; then
+    echo 517 > export
+fi
+
+if [ ! -d /sys/class/gpio/gpio518 ]; then
+    echo 518 > export
+fi
+
+if [ ! -d /sys/class/gpio/gpio525 ]; then
+    echo 525 > export
+fi
+
+if [ ! -d /sys/class/gpio/gpio531 ]; then
+    echo 531 > export
+fi
+
+if [ ! -d /sys/class/gpio/gpio533 ]; then
+    echo 533 > export
+fi
+
+if [ ! -d /sys/class/gpio/gpio538 ]; then
+    echo 538 > export
+fi
+
+
+echo out > gpio517/direction
+echo out > gpio518/direction
+echo out > gpio525/direction
+echo out > gpio531/direction
+echo in > gpio533/direction
+echo out > gpio538/direction
+
+echo 0 > gpio517/value
+echo 0 > gpio518/value
+echo 0 > gpio525/value
+echo 0 > gpio531/value
+echo 0 > gpio538/value
+
+
+#
+cd /sys/class/gpio/
+
+if [ ! -d /sys/class/gpio/gpio530 ]; then
+    echo "530" > /sys/class/gpio/export
+fi
+echo "out" > /sys/class/gpio/gpio530/direction
+echo 0 > /sys/class/gpio/gpio530/value
+sleep 0.2
+echo 1 > /sys/class/gpio/gpio530/value
+sleep 0.2
+echo 0 > /sys/class/gpio/gpio530/value
+
+sleep 20
+
+sudo pppd call gprs &
+
+sleep 10
+
+#route add default ppp0
