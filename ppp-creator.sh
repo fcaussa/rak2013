@@ -1,5 +1,9 @@
 #!/bin/sh
 
+#$1 => APN 
+#$2 => Serial Port: /dev/ttyS0
+#$3 => baudrate: 115200
+
 #echo "install ppp"
 #apt-get install ppp
 
@@ -37,9 +41,10 @@ SAY \"\nGoodbay\n\"" > /etc/chatscripts/quectel-chat-disconnect
 
 echo "creating script file : /etc/ppp/peers/gprs"
 echo "
-/dev/ttyS0 115200
+#/dev/ttyS0 115200
+$2 $3
 # The chat script, customize your APN in this file
-connect 'chat -s -v -f /etc/chatscripts/quectel-chat-connect -T internet.movil'
+connect 'chat -s -v -f /etc/chatscripts/quectel-chat-connect -T $1'
 # The close script
 disconnect 'chat -s -v -f /etc/chatscripts/quectel-chat-disconnect'
 # Hide password in debug messages
