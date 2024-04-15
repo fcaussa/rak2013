@@ -107,13 +107,14 @@ Controller is gpio512
 inputs must be 512 + pin number
 
 GPIO PIN->   ChipPIN
+```bash
 5     ->   517
 6     ->   518
 13    ->   525
 19    ->   531
 21    ->   533
 26    ->   538
-
+```
 Now we need to adjust the activate_lte script with respective GPIO Pins.
 
 Now we run
