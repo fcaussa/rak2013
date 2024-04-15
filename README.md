@@ -119,10 +119,16 @@ Now we need to adjust the activate_lte script with respective GPIO Pins.
 
 Now we run ppp-creator
 ```bash
+#modify accordingly
+
 apn='internet.movil'
+
 serialport=/dev/ttyS0
+
 baudrate=115200
+
 sudo ./ppp-creator.sh $apn $serialport $baudrate
+
 ```
 
 and after is completed!
