@@ -117,9 +117,9 @@ GPIO PIN->   ChipPIN
 ```
 Now we need to adjust the activate_lte script with respective GPIO Pins.
 
-Now we run
+Now we run ppp-creator
 ```bash
-sudo ./ppp-creator.sh
+sudo ./ppp-creator.sh '<apn.dns>' <serial> <baudrate>
 ```
 
 and after is completed!
