@@ -114,5 +114,23 @@ GPIO PIN->   ChipPIN
 
 Now we need to adjust the activate_lte script with respective GPIO Pins.
 
+Now we run
+```bash
+sudo ./ppp-creator.sh
+```
+
+and after is completed!
+
+we can execute activate_lte.
+
+This will turn ON the Rak2013 LTE hat, create a ppp0 link (connection) and set the default route to it.
+
+You can add a crontab @reboot to be executed at reboot.
+
+```bash
+@reboot sleep 60 && /path/to/folder/rak2013/activate_lte 2>/dev/null &
+```
+Done!
+
 
 
