@@ -35,7 +35,7 @@ apt-get install ppp
 #mkdir -p /etc/ppp/peers
 
 #Delete folder and content if already exists!
-rm -rf /usr/local/rak 2>/dev/null
+rm -rf /usr/local/rak2013 2>/dev/null
 
 rm /etc/chatscripts/quectel-chat-connect 2>/dev/null
 
@@ -206,7 +206,7 @@ sleep 10
 
 route add default ppp0
 
-" > /usr/local/rak/activate_lte
+" > /usr/local/rak2013/activate_lte
 
 
 
