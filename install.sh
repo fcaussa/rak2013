@@ -211,7 +211,7 @@ route add default ppp0
 
 
 echo "*********************************************************"
-echo "*  The RAKwireless for RAK2013 is successfully installed!   *"
+echo "*  The RAK2013 LTE Module is successfully installed!   *"
 echo "*********************************************************"
 
 echo "\n\n Please reboot board!"
