@@ -7,6 +7,18 @@ if [ $UID != 0 ]; then
     exit 1
 fi
 
+#check we have all the required variables!
+[ -z ${1+z} ] && echo "APN is set to $1" || echo "APN Not defined";
+[ -z ${2+z} ] && echo "Serial Port is set to $2" || echo "Serial Port Not defined";
+[ -z ${3+z} ] && echo "Baudrate is set to $3" || echo "Modem Baudrate Not defined";
+[ -z ${4+z} ] && echo "Pin5 is set to $4" || echo "Pin5 Not defined";
+[ -z ${5+z} ] && echo "Pin6 is set to $5" || echo "Pin6 Not defined";
+[ -z ${6+z} ] && echo "Pin13 is set to $6" || echo "Pin13 Not defined";
+[ -z ${7+z} ] && echo "Pin18 is set to $7" || echo "Pin18 Not defined";
+[ -z ${8+z} ] && echo "Pin19 is set to $8" || echo "Pin19 Not defined";
+[ -z ${9+z} ] && echo "Pin21 is set to $9" || echo "Pin21 Not defined";
+[ -z ${10+z} ] && echo "Pin26 is set to ${10}" || echo "Pin26 Not defined";
+
 
 echo "\n\n Intalling Rak2013 LTE Module"
 
