@@ -100,25 +100,24 @@ gpiochp0 is gpiochip512 and gpiochip1 is gpio570
 
 With this information, now we can handle the GPIOs from BASH, adding the number of the chip to the corresponding GPIO
 
-For the Rak2013 we need to handle GPIOs 5,6,13,19,21 and 26 in order to Power on the hat.
+For the Rak2013 we need to handle GPIOs 5,6,13,18,19,21 and 26 in order to Power on the hat.
 
 Controller is gpio512
 
 inputs must be 512 + pin number
 
-GPIO PIN->   ChipPIN
+GPIO PIN->  (gpioChip + line) GPIOpin
 ```bash
-5     ->   517
-6     ->   518
-13    ->   525
-18    ->   530 (Power Enable) 
-19    ->   531
-21    ->   533
-26    ->   538
+5     ->   (512 + 5)  517
+6     ->   (512 + 6)  518
+13    ->   (512 + 13) 525
+18    ->   (512 + 18) 530 (Power Enable) 
+19    ->   (512 + 19) 531
+21    ->   (512 + 12) 533
+26    ->   (512 + 26) 538
 ```
-Now we need to adjust the activate_lte script with respective GPIO Pins.
 
-Now we run install
+Now we run install using the previous values as arguments on the installer
 ```bash
 #modify accordingly
 
