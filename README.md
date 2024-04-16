@@ -131,14 +131,18 @@ sudo ./install.sh <apn> <serialport> <baudrate> <pin5> <pin6> <pin13> <pin18> <p
 
 and after is completed!
 
-we can execute activate_lte.
+we can execute 
+
+```bash
+sh /usr/local/rak2013/activate_lte
+```
 
 This will turn ON the Rak2013 LTE hat, create a ppp0 link (connection) and set the default route to it.
 
 You can add a crontab @reboot to be executed at reboot, Or you can mannually run it every time you want to connect to the LTE APN
 
 ```bash
-@reboot sleep 60 && /path/to/folder/rak2013/activate_lte 2>/dev/null &
+@reboot sleep 60 && /usr/local/rak2013/activate_lte 2>/dev/null &
 ```
 
 Reboot the Rpi, and it should automatically turn on the LTE hat, (Blue Light) and Connect (red light) to the LTE network
