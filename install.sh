@@ -1,4 +1,14 @@
 #!/bin/sh
+# Stop on the first sign of trouble
+set -e
+
+if [ $UID != 0 ]; then
+    echo "ERROR: Operation not permitted. Forgot sudo?"
+    exit 1
+fi
+
+
+echo "\n\n Intalling Rak2013 LTE Module"
 
 #$1 => APN 
 #$2 => Serial Port: /dev/ttyS0
@@ -77,4 +87,8 @@ ipcp-max-failure 30
 # Ask the peer for up to 2 DNS server addresses
 usepeerdns" > /etc/ppp/peers/gprs
 
-echo "\n\nUse \"sudo pppd call gprs\" command and Surf"
+echo "*********************************************************"
+echo "*  The RAKwireless for RAK2013 is successfully installed!   *"
+echo "*********************************************************"
+
+echo "\n\n Please reboot board!"
