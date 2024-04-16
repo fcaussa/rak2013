@@ -122,13 +122,10 @@ Now we run ppp-creator
 ```bash
 #modify accordingly
 
-apn='internet.movil'
+#sudo ./ppp-creator.sh 'internet.movil' /dev/ttyS0 115200
+sudo ./ppp-creator.sh <apn> <serialport> <baudrate>
 
-serialport=/dev/ttyS0
 
-baudrate=115200
-
-sudo ./ppp-creator.sh $apn $serialport $baudrate
 
 ```
 
