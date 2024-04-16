@@ -123,7 +123,7 @@ Now we run install
 #modify accordingly
 
 #sudo ./install.sh 'internet.movil' /dev/ttyS0 115200
-sudo ./install.sh <apn> <serialport> <baudrate>
+sudo ./install.sh <apn> <serialport> <baudrate> <pin5> <pin6> <pin13> <pin18> <pin19> <pin21> <pin26>
 
 
 
