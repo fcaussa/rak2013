@@ -118,12 +118,12 @@ GPIO PIN->   ChipPIN
 ```
 Now we need to adjust the activate_lte script with respective GPIO Pins.
 
-Now we run ppp-creator
+Now we run install
 ```bash
 #modify accordingly
 
-#sudo ./ppp-creator.sh 'internet.movil' /dev/ttyS0 115200
-sudo ./ppp-creator.sh <apn> <serialport> <baudrate>
+#sudo ./install.sh 'internet.movil' /dev/ttyS0 115200
+sudo ./install.sh <apn> <serialport> <baudrate>
 
 
 
