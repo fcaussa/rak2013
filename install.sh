@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Stop on the first sign of trouble
 set -e
 
