@@ -74,8 +74,13 @@ echo 0 > /sys/class/gpio/gpio530/value
 
 sleep 20
 
-sudo pppd call gprs &
+pppd call gprs &
 
 sleep 10
 
-#route add default ppp0
+route add default ppp0
+
+rm /etc/resolv.conf
+
+echo "nameserver 1.1.1.1" >> /etc/resolv.conf
+echo "nameserver 1.0.0.1" >> /etc/resolv.conf
