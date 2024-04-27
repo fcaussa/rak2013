@@ -10,6 +10,10 @@ fi
 #echo "install ppp"
 #apt-get install ppp
 
+#disable IPV6
+echo "install ipv6 /bin/true" >> /etc/modprobe.d/disableipv6.conf
+
+
 echo "creating directories"
 #mkdir -p /etc/chatscripts
 #mkdir -p /etc/ppp/peers
