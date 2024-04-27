@@ -1,5 +1,7 @@
 #!/bin/sh
 
+
+#This Pinout config is for the Rpi4b 4Gb
 #Controller is gpio512
 #inputs must be 512 + pin number
 # 5     -> 517
