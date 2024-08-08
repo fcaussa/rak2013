@@ -76,13 +76,17 @@ echo 0 > /sys/class/gpio/gpio530/value
 
 sleep 20
 
+#start LTE/GPRS connection
 pppd call gprs &
 
 sleep 10
 
+#make the default internet route the ppp0 connection
 route add default ppp0
 
+#clear the resolv.conf DNS settings
 rm /etc/resolv.conf
 
+#add cloudflare DNS
 echo "nameserver 1.1.1.1" >> /etc/resolv.conf
 echo "nameserver 1.0.0.1" >> /etc/resolv.conf
