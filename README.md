@@ -142,6 +142,13 @@ This will turn ON the Rak2013 LTE hat, create a ppp0 link (connection) and set t
 
 You can add a crontab @reboot to be executed at reboot, Or you can mannually run it every time you want to connect to the LTE APN
 
+Make sure this lines are on top of crontab to be able to correctly execute the script
+
+```bash
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+```
+
 ```bash
 @reboot sleep 60 && /path/to/file/rak2013/activate_lte 2>&1 &
 ```
